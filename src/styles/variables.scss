@@ -1,0 +1,110 @@
+// PRIMARY COLORS
+
+    //botones
+    $color-buttom-primary:#557EE5;
+
+        //TEXTB
+        $color-text-buttom-blue:#365196;
+        $color-text-buttom-white:#FCFCFC;
+
+    //TEXT
+    $color-Text-blue-dark:#545F71;
+    $color-Text-black:#020202;
+    $color-Text-grey:#545F71;
+
+    //BACKGROUNTS
+    $color-backgounts: #EDF4FF;
+    $color-backgounts-one: #F8F9FB;
+    $color-backgounts-two: #F5F7FA;
+    $color-backgounts-white: #FFFFFF;
+
+    //BORDERS
+    $color-borders:#EDF4FF;
+
+//FONT
+
+$font-titles: "Montserrat", sans-serif;
+$font-content: "Poppins", sans-serif;
+
+//TYPE
+%title-h1 {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 100%;
+    font-family: $font-titles;
+    vertical-align: middle;
+    color: $color-Text-black;
+}
+%title-h2 {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 100%;
+    font-family: $font-titles;
+    vertical-align: middle;
+    color: $color-Text-black;
+}
+%title-h3 {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 100%;
+    font-family: $font-content;
+    vertical-align: middle;
+    color: $color-Text-black;
+}
+%title-h4 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 100%;
+    font-family: $font-content;
+    vertical-align: middle;
+    color: $color-Text-black;
+}
+%text-one {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 100%;
+    font-family: $font-content;
+    vertical-align: middle;
+    color: $color-Text-black;
+}
+%text-two{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 100%;
+    font-family: $font-content;
+    vertical-align: middle;
+    color: $color-Text-black;
+}
+%text-three{
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 100%;
+    font-family: $font-content;
+    vertical-align: middle;
+    color: $color-Text-black;
+}
+%botton-one{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 100%;
+    font-family: $font-content;
+    vertical-align: middle;
+    color: $color-Text-black;
+}
+%botton-two{
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 100%;
+    font-family: $font-content;
+    vertical-align: middle;
+    color: $color-Text-black;
+}
+%botton-three{
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 100%;
+    font-family: $font-content;
+    vertical-align: middle;
+    color: $color-Text-black;
+}
+
