@@ -11,5 +11,6 @@
 <style>
     .footer{
         background-color: blue;
+        height: 378px;
     }
 </style>

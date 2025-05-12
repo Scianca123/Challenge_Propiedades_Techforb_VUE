@@ -1,11 +1,16 @@
-
+@use './styles/variables' as *;
 body,html {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-color: $color-backgounts-one;
 }
 #app {
   height: 100%;
+}
+.page-container{
+  padding-left: $padding-page-x;
+  padding-right: $padding-page-x;
 }
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;

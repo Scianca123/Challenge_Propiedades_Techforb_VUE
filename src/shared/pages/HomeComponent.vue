@@ -10,7 +10,7 @@ import FooterComponent from '../components/FooterComponent.vue';
         </section>
         <section class="home__content">
             <h1>
-                contenido
+   
             </h1>
         </section class="home__footer">
         <section>
@@ -24,14 +24,13 @@ import FooterComponent from '../components/FooterComponent.vue';
 <style lang="scss">
     .home{
         display: grid;
-        grid-template-rows: auto 1fr auto;
+        grid-template-rows: minmax(300px,1fr) auto;
         grid-template-areas:
-                            "seccionHeader"
                             "content"
                             "footer";
         min-height: 100%;
         &__header{
-            grid-area: seccionHeader;
+            position: fixed;
         }
         &__content{
             grid-area: content;
@@ -39,7 +38,7 @@ import FooterComponent from '../components/FooterComponent.vue';
         }
         &__footer{
             grid-area: footer;
-            bottom: 0;
+           
         }
     }
 </style>
