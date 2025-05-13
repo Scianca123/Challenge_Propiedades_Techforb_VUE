@@ -31,9 +31,11 @@ import FooterComponent from '../components/FooterComponent.vue';
         min-height: 100%;
         &__header{
             position: fixed;
+            z-index: 1000;
         }
         &__content{
             grid-area: content;
+            background-color: black;
         }
         &__footer{
             grid-area: footer;

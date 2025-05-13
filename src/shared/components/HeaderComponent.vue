@@ -1,16 +1,18 @@
-<script setup></script>
+<script setup>
+import ButtonComponent from '../components/ButtonComponent.vue';
+</script>
 
 <template>
     <header class="header ">
         
         <div class="header__contain page-container">
-          <img src="../../assets/iconos/LOGOIcon.svg" alt="" loading="lazy">
+          <img class="header__contain__img" src="../../assets/iconos/LOGOIcon.svg" alt="" loading="lazy">
           <nav class="header__contain__navbar">
              <ul class="header__contain__navbar__list">
-                <li>Inicio</li>
-                <li>Nosotros</li>
-                <li>Propiedades</li>
-                <li>login</li>
+                <li><ButtonComponent variant="terciario">Inicio</ButtonComponent></li>
+                <li><ButtonComponent variant="terciario">Nosotros</ButtonComponent></li>
+                <li><ButtonComponent variant="terciario">Propiedades</ButtonComponent></li>
+                <li><ButtonComponent variant="secondary"><p class="btn--text-login">Login</p></ButtonComponent></li>
              </ul>
           </nav>
          
@@ -26,13 +28,18 @@
     background-color: transparent;
     position: fixed;
     width: 100%;
-    height:120px;
+    height:150px;
+    
     &__contain{
       display: flex;
       justify-content: center;
       width: 100%;
       @media(min-width:768px){
         justify-content: space-between;
+      }
+      &__img{
+        height: 45px;
+        width: 100px;
       }
       &__navbar{
         display: none;
@@ -46,5 +53,9 @@
         }
       }
     }
+  }
+  .btn--text-login{
+    margin: 0px 15px 0px 15px;
+ 
   }
 </style>
