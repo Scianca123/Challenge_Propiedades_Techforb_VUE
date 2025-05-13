@@ -4,13 +4,13 @@ import FooterComponent from '../components/FooterComponent.vue';
 </script>
 
 <template>
-    <div class="home">
+    <div class="home ">
         <section class="home__header">
             <HeaderComponent></HeaderComponent>
         </section>
-        <section class="home__content">
+        <section class="home__content page-container">
             <h1>
-   
+                content
             </h1>
         </section class="home__footer">
         <section>
@@ -34,7 +34,6 @@ import FooterComponent from '../components/FooterComponent.vue';
         }
         &__content{
             grid-area: content;
-            background-color: yellow;
         }
         &__footer{
             grid-area: footer;

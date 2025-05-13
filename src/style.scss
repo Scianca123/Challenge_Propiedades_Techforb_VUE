@@ -12,6 +12,18 @@ body,html {
   padding-left: $padding-page-x;
   padding-right: $padding-page-x;
 }
+h1{
+  @extend %title-h1;
+}
+h2{
+  @extend %title-h2;
+}
+h3{
+  @extend %title-h3;
+}
+h4{
+  @extend %title-h4;
+}
 /* :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
