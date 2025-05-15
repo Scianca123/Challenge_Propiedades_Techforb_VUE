@@ -50,6 +50,7 @@
 </template>   
 
 <style scoped lang="scss">
+    @use '@/styles/variables' as *;
     .footer{
         height: auto;
         background-image: url('@/assets/images/footerImg.jpg');
@@ -63,7 +64,7 @@
         }
         &__overlay{
             position: absolute;
-            background-color: rgba(54, 81, 150, 0.5); 
+            background-color: rgba(33, 50, 94, 0.678); 
             width: 100%;
             height: 100%;
             z-index: 0;
@@ -71,20 +72,20 @@
         &__content{
             position: relative;
             z-index: 3;
+            padding-top: 35px;
+            padding-bottom: 40px;
             &__head-container {
                 display: grid;
                 grid-template-columns: 1fr; // por defecto mobile
                 gap: 20px;
                 padding-bottom: 20px;
-                justify-items: end;
+                justify-items: center;
 
-                @media (min-width: 600px) {
-                    grid-template-columns: repeat(3, 1fr);
-                }
 
                 @media (min-width: 992px) {
                     grid-template-columns: auto repeat(5, 1fr); // logo + 5 columnas
                     align-items: start;
+                    justify-items: end;
                 }
 
                 &__logo-container {
@@ -108,10 +109,6 @@
                     justify-items: center;
                     gap: 20px;
 
-                    @media (min-width: 600px) {
-                    grid-template-columns: repeat(2, 1fr);
-                    }
-
                     @media (min-width: 992px) {
                         display: contents;
                     }
@@ -120,22 +117,28 @@
                     list-style: none;
                     padding: 0;
                     margin: 0;
-
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                    
                         &__itemHead {
-                            font-weight: 700;
-                            font-size: 16px;
-                            margin-bottom: 8px;
+                            @extend %title-h4;
+                            margin-bottom: 10px;
                             display: block;
+                            text-decoration: none;
+                            color: $color-text-buttom-white;
                         }
 
                         &__item {
                             font-size: 14px;
                             margin: 6px 0;
                             display: block;
-
+                            text-decoration: none;
+                            @extend %text-one;
+                            color: $color-text-buttom-white;
                             img {
-                            width: 24px;
-                            height: 24px;
+                                width: 24px;
+                                height: 24px;
                             }
                         }
                     }
@@ -143,14 +146,17 @@
             }
 
             &__social-container {
-            margin-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            margin-top: 50px;
+            border-top: 0.8px solid $color-text-buttom-white;
             padding-top: 10px;
-            text-align: center;
+            text-align: start;
 
-            &__text {
-                font-size: 12px;
-            }
+                &__text {
+                    font-size: 12px;
+                    @extend %text-two;
+                    color: $color-text-buttom-white;
+                    margin: 0;
+                }
             }
         }
     }

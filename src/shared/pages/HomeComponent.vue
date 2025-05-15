@@ -1,6 +1,7 @@
 <script setup>
-import HeaderComponent from '../components/HeaderComponent.vue';
-import FooterComponent from '../components/FooterComponent.vue';
+import HeaderComponent from '@/shared/components/HeaderComponent.vue';
+import FooterComponent from '@/shared/components/FooterComponent.vue';
+import SectionFiltersComponent from '@/shared/components/SectionFiltersComponent.vue';
 </script>
 
 <template>
@@ -8,12 +9,10 @@ import FooterComponent from '../components/FooterComponent.vue';
         <section class="home__header">
             <HeaderComponent></HeaderComponent>
         </section>
-        <section class="home__content page-container">
-            <h1>
-                content
-            </h1>
-        </section class="home__footer">
-        <section>
+        <section class="home__content">
+            <SectionFiltersComponent></SectionFiltersComponent>
+        </section >
+        <section class="home__footer">
             <FooterComponent></FooterComponent>
         </section>
         
@@ -39,7 +38,7 @@ import FooterComponent from '../components/FooterComponent.vue';
         }
         &__footer{
             grid-area: footer;
-           
+            z-index: 1001;
         }
     }
 </style>

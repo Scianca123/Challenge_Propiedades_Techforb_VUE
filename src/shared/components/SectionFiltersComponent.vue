@@ -1,0 +1,128 @@
+<script setup>
+import ToggleComponent from './ToggleComponent.vue';
+
+</script>
+
+<template>
+    <section class="section-filter">
+        <div class="section-filter__overlay"></div>
+        <div class="section-filter__container page-container">
+            <div class="section-filter__container__title">
+                <h1 class="section-filter__container__title__text">Encuentra la Propiedad de tus Sueños con Nosotros</h1>
+            </div>
+            <div class="section-filter__container__filters">
+                <ToggleComponent></ToggleComponent>
+                <input type="text"  class="section-filter__container__filters__input" placeholder="Buscar por ubicación o palabra clave...">
+                <select name="" id="" class="section-filter__container__filters__selects">
+                    <option value="" disabled selected>Departamento</option>
+                    <option value="departamento">Departamento</option>
+                    <option value="edificio">Edificio</option>
+                </select>
+                <select name="" id="" class="section-filter__container__filters__selects">
+                    <option value="" disabled selected>Hambientes</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                </select>
+                <select name="" id="" class="section-filter__container__filters__selects section-filter__container__filters__selects--small-Select">
+                    <option value="" disabled selected>Precio </option>
+                    <option value="0-10.000">0-10.000</option>
+                    <option value="10.000-20.000">10.000-20.000</option>
+                    <option value="20.000-30.000">20.000-30.000</option>
+                    <option value="30.000-40.000">30.000-40.000</option>
+                </select>
+                <button class="section-filter__container__filters__btn section-filter__container__filters__btn--light"><img src="@/assets/iconos/iconfilters.svg" alt="search"></button>
+                <button class="section-filter__container__filters__btn"><img src="@/assets/iconos/iconSerch.svg" alt="filters"></button>
+            </div>
+        </div>
+    </section>
+</template>
+
+<style lang="scss">
+@use '@/styles/variables' as *;
+    .section-filter{
+        position: relative;
+        width: 100%;
+        min-height: 100vh;
+        background-image: url('@/assets/images/property1.jpg');
+        background-size: center;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        @media(min-width:992px){
+            background-size: 110%;
+            height: 100dvh;
+        }
+        &__overlay{
+            position: absolute;
+            width: 100%;
+            height:100%;
+            background-color: rgba(0, 0, 0, 0.5); 
+        }
+        &__container{
+            z-index: 3;
+            padding-top:200px ;
+            padding-bottom: 200px;
+            &__title{
+                &__text{
+                    max-width: 639px;
+                    font-size: 48px;
+                    color: $color-backgounts-white;
+                    margin: 100px 0 30px 0;
+                    @media(min-width:992px){
+                        margin: 0 0 30px 0;
+                    }
+                }
+            }
+            &__filters{
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+                @media(min-width:992px){
+                    flex-direction:row;
+                    justify-content: space-between;
+                }
+                &__input{
+                    padding-left: 15px;
+                    border-radius: 5px;
+                    border: none;
+                    min-height: 41px;
+                    @extend %text-three;
+                    @media(min-width:992px){
+                        width: 398px;
+                    }
+                }
+                &__selects{
+                    border-radius: 5px;
+                    padding: 0 30px 0 15px;
+                    color: $color-Text-grey;
+                    appearance: none;
+                    @extend %text-three;
+                    background-image: url('@/assets/iconos/iconSelects.svg');
+                    background-repeat: no-repeat;
+                    background-position: right 10px center;
+                    background-size: 15px; // ajustalo a tu gusto
+                    min-height: 41px;
+                    &--small-Select{
+                        @media(min-width:992px){
+                            max-width: 85px;
+                        }
+                    }
+                }
+                &__btn{
+                    border-radius: 5px;
+                    background-color: $color-text-buttom-blue;
+                    border: 0;
+                    min-width: 44px;
+                    min-height: 41px;
+                    &--light{
+                        background-color: $color-text-buttom-white;
+                    }
+                }
+            }
+        }
+    }
+</style>

@@ -29,7 +29,7 @@ import ButtonComponent from '../components/ButtonComponent.vue';
     position: fixed;
     width: 100%;
     height:150px;
-    
+    z-index: 1000;
     &__contain{
       display: flex;
       justify-content: center;
