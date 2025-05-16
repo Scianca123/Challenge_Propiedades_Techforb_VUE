@@ -1,6 +1,46 @@
-<script setup>
+<script setup lang="ts">
+import { ref, watch } from 'vue';
 import ToggleComponent from './ToggleComponent.vue';
-
+import { useBuildingsFilter } from '../../features/properties/composables/useBuildingsFilter';
+const typeOfBusiness = ref<'comprar' | 'alquilar'>('alquilar');
+const propertyType = ref('');
+const search = ref('');
+const numberOfBedrooms = ref('');
+const { buildings, fetchBuildings } = useBuildingsFilter();
+const priceRange = ref('');
+watch(
+    [typeOfBusiness, propertyType, search, numberOfBedrooms, priceRange],
+  () => {
+    const [minPrice, maxPrice] = parsePriceRange(priceRange.value);
+    fetchBuildings({
+      typeOfBusiness: typeOfBusiness.value || undefined,
+      propertyType: propertyType.value || undefined,
+      search: search.value || undefined,
+      numberOfBedrooms: numberOfBedrooms.value || undefined,
+      minPrice,
+      maxPrice,
+    });
+  console.log(buildings);}
+);
+function applyFilters() {
+  const [minPrice, maxPrice] = parsePriceRange(priceRange.value);
+  fetchBuildings({
+    typeOfBusiness: typeOfBusiness.value || undefined,
+    propertyType: propertyType.value || undefined,
+    search: search.value || undefined,
+    numberOfBedrooms: numberOfBedrooms.value || undefined,
+    minPrice,
+    maxPrice,
+  })
+  
+}
+function parsePriceRange(range: string): [number | undefined, number | undefined] {
+  if (!range) return [undefined, undefined];
+  const [minStr, maxStr] = range.split('-');
+  const min = parseInt(minStr.replace('.', ''));
+  const max = parseInt(maxStr.replace('.', ''));
+  return [min, max];
+}
 </script>
 
 <template>
@@ -11,29 +51,29 @@ import ToggleComponent from './ToggleComponent.vue';
                 <h1 class="section-filter__container__title__text">Encuentra la Propiedad de tus Sueños con Nosotros</h1>
             </div>
             <div class="section-filter__container__filters">
-                <ToggleComponent></ToggleComponent>
-                <input type="text"  class="section-filter__container__filters__input" placeholder="Buscar por ubicación o palabra clave...">
-                <select name="" id="" class="section-filter__container__filters__selects">
+                <ToggleComponent  v-model:selected="typeOfBusiness"></ToggleComponent>
+                <input v-model="search" type="text"  class="section-filter__container__filters__input" placeholder="Buscar por ubicación o palabra clave...">
+                <select v-model="propertyType" name="" id="" class="section-filter__container__filters__selects">
                     <option value="" disabled selected>Departamento</option>
                     <option value="departamento">Departamento</option>
                     <option value="edificio">Edificio</option>
                 </select>
-                <select name="" id="" class="section-filter__container__filters__selects">
+                <select v-model="numberOfBedrooms" name="" id="" class="section-filter__container__filters__selects">
                     <option value="" disabled selected>Hambientes</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
                 </select>
-                <select name="" id="" class="section-filter__container__filters__selects section-filter__container__filters__selects--small-Select">
-                    <option value="" disabled selected>Precio </option>
-                    <option value="0-10.000">0-10.000</option>
-                    <option value="10.000-20.000">10.000-20.000</option>
-                    <option value="20.000-30.000">20.000-30.000</option>
-                    <option value="30.000-40.000">30.000-40.000</option>
+                <select v-model="priceRange" name="" id="" class="section-filter__container__filters__selects section-filter__container__filters__selects--small-Select">
+                    <option value="" disabled >Precio </option>
+                    <option value="0-10000">0-10.000</option>
+                    <option value="10000-20000">10.000-20.000</option>
+                    <option value="20000-30000">20.000-30.000</option>
+                    <option value="30000-40000">30.000-40.000</option>
                 </select>
                 <button class="section-filter__container__filters__btn section-filter__container__filters__btn--light"><img src="@/assets/iconos/iconfilters.svg" alt="search"></button>
-                <button class="section-filter__container__filters__btn"><img src="@/assets/iconos/iconSerch.svg" alt="filters"></button>
+                <button @click="applyFilters" class="section-filter__container__filters__btn"><img src="@/assets/iconos/iconSerch.svg" alt="filters"></button>
             </div>
         </div>
     </section>

@@ -1,10 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 
-// Variable para saber cuál está seleccionado ('comprar' o 'alquilar')
-const selected = ref<'comprar' | 'alquilar'>('comprar')
+const selected = defineModel<'comprar' | 'alquilar'>('selected')
 
-// Función para cambiar el seleccionado
 const seleccionar = (opcion: 'comprar' | 'alquilar') => {
   selected.value = opcion
 }
