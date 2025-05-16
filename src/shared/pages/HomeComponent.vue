@@ -11,6 +11,9 @@ import SectionFiltersComponent from '@/shared/components/SectionFiltersComponent
         </section>
         <section class="home__content">
             <SectionFiltersComponent></SectionFiltersComponent>
+            <div>
+                <p>hola</p>
+            </div>
         </section >
         <section class="home__footer">
             <FooterComponent></FooterComponent>
@@ -34,7 +37,7 @@ import SectionFiltersComponent from '@/shared/components/SectionFiltersComponent
         }
         &__content{
             grid-area: content;
-            background-color: black;
+           
         }
         &__footer{
             grid-area: footer;

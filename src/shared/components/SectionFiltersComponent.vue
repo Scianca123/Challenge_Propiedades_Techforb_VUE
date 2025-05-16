@@ -136,6 +136,7 @@ function parsePriceRange(range: string): [number | undefined, number | undefined
                     }
                 }
                 &__selects{
+                    cursor: pointer;
                     border-radius: 5px;
                     padding: 0 30px 0 15px;
                     color: $color-Text-grey;
@@ -153,6 +154,7 @@ function parsePriceRange(range: string): [number | undefined, number | undefined
                     }
                 }
                 &__btn{
+                    cursor: pointer;
                     border-radius: 5px;
                     background-color: $color-text-buttom-blue;
                     border: 0;

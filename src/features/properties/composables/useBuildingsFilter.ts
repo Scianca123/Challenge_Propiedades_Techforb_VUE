@@ -1,5 +1,5 @@
 import { ref } from 'vue';
-import axios from 'axios';
+import api from '../../../shared/utils/axios';
 
 export function useBuildingsFilter() {
   const buildings = ref([]);
@@ -17,7 +17,7 @@ export function useBuildingsFilter() {
     loading.value = true;
     error.value = null;
     try {
-      const response = await axios.get('http://localhost:3000/building', {params: filters});
+    const response = await api.get('/building', { params: filters });
       buildings.value = response.data;
     } catch (err:any) {
       error.value = err.message || 'Error desconocido';
