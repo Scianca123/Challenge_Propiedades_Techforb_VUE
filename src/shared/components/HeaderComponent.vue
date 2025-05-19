@@ -24,9 +24,9 @@ function handleLoginLogoutClick() {
           <img class="header__contain__img" src="../../assets/iconos/LOGOIcon.svg" alt="" loading="lazy">
           <nav class="header__contain__navbar">
              <ul class="header__contain__navbar__list">
-                <li><ButtonComponent variant="terciario">Inicio</ButtonComponent></li>
-                <li><ButtonComponent variant="terciario">Nosotros</ButtonComponent></li>
-                <li><ButtonComponent variant="terciario">Propiedades</ButtonComponent></li>
+                <li class="header__contain__navbar__list__item"><ButtonComponent variant="terciario">Inicio</ButtonComponent></li>
+                <li class="header__contain__navbar__list__item"><ButtonComponent variant="terciario">Nosotros</ButtonComponent></li>
+                <li class="header__contain__navbar__list__item"><ButtonComponent variant="terciario">Propiedades</ButtonComponent></li>
                 <li>
                   <ButtonComponent 
                     variant="secondary"
@@ -51,24 +51,23 @@ function handleLoginLogoutClick() {
     z-index: 1000;
     &__contain{
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       width: 100%;
-      @media(min-width:768px){
-        justify-content: space-between;
-      }
       &__img{
         height: 45px;
         width: 100px;
       }
       &__navbar{
-        display: none;
-        @media (min-width: 768px){
-          display: block;
-        }
         &__list{
           display: flex;
           gap: 24px;
           list-style: none;
+          &__item{
+            display: none;
+            @media (min-width: 992px){
+              display: block;
+            }
+          }
         }
       }
     }

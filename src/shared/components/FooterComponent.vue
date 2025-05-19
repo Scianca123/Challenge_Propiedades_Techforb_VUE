@@ -106,11 +106,12 @@
                 &__nav {
                     display: grid;
                     grid-template-columns: 1fr;
-                    justify-items: center;
+                    justify-items: start;
                     gap: 20px;
 
                     @media (min-width: 992px) {
                         display: contents;
+                        justify-items: center;
                     }
 
                     &__list {

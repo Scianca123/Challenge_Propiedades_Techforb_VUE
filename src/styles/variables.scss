@@ -11,6 +11,8 @@
     $color-Text-blue-dark:#545F71;
     $color-Text-black:#020202;
     $color-Text-grey:#545F71;
+    $color-label-gray:#838383;
+    $color-gray-primary:#8A8A8A;
 
     //BACKGROUNTS
     $color-backgounts: #EDF4FF;
@@ -92,7 +94,6 @@ $padding-page-x: 8.5rem;
     line-height: 100%;
     font-family: $font-content;
     vertical-align: middle;
-    // color: $color-Text-black;
 }
 %botton-two{
     font-size: 13px;
@@ -100,7 +101,6 @@ $padding-page-x: 8.5rem;
     line-height: 100%;
     font-family: $font-content;
     vertical-align: middle;
-    // color: $color-Text-black;
 }
 %botton-three{
     font-size: 11px;
@@ -108,6 +108,11 @@ $padding-page-x: 8.5rem;
     line-height: 100%;
     font-family: $font-content;
     vertical-align: middle;
-    // color: $color-Text-black;
 }
 
+//BOXSHADOW
+$box-shadow-card:0px 4.16px 8.32px rgba(106, 100, 166, 0.1),
+                 0px 15.95px 15.95px rgba(106, 100, 166, 0.09),
+                 0px 35.37px 20.8px rgba(106, 100, 166, 0.05),
+                 0px 62.41px 24.97px rgba(106, 100, 166, 0.01),
+                 0px 97.78px 24.74px rgba(106, 100, 166, 0);

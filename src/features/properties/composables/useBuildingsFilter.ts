@@ -18,7 +18,7 @@ export function useBuildingsFilter() {
     error.value = null;
     try {
     const response = await api.get('/building', { params: filters });
-      buildings.value = response.data;
+      buildings.value = response.data.buildings ?? [];
     } catch (err:any) {
       error.value = err.message || 'Error desconocido';
     } finally {

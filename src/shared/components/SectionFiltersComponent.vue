@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue';
+import { onMounted, ref, watch } from 'vue';
 import ToggleComponent from './ToggleComponent.vue';
 import { useBuildingsFilter } from '../../features/properties/composables/useBuildingsFilter';
 const typeOfBusiness = ref<'comprar' | 'alquilar'>('alquilar');
@@ -8,10 +8,25 @@ const search = ref('');
 const numberOfBedrooms = ref('');
 const { buildings, fetchBuildings } = useBuildingsFilter();
 const priceRange = ref('');
+const [minPrice, maxPrice] = parsePriceRange(priceRange.value);
+// const minPricep=ref<number>();
+// const maxPricep=ref<number>();
+
+onMounted(async() => {
+  fetchBuildings({
+    typeOfBusiness: typeOfBusiness.value || undefined,
+      propertyType: propertyType.value || undefined,
+      search: search.value || undefined,
+      numberOfBedrooms: numberOfBedrooms.value || undefined,
+      minPrice,
+      maxPrice,
+  }) 
+  console.log(buildings.value);
+})
 watch(
     [typeOfBusiness, propertyType, search, numberOfBedrooms, priceRange],
   () => {
-    const [minPrice, maxPrice] = parsePriceRange(priceRange.value);
+    // const [minPrice, maxPrice] = parsePriceRange(priceRange.value);
     fetchBuildings({
       typeOfBusiness: typeOfBusiness.value || undefined,
       propertyType: propertyType.value || undefined,
@@ -20,7 +35,7 @@ watch(
       minPrice,
       maxPrice,
     });
-  console.log(buildings);}
+  console.log(buildings.value);}
 );
 function applyFilters() {
   const [minPrice, maxPrice] = parsePriceRange(priceRange.value);
