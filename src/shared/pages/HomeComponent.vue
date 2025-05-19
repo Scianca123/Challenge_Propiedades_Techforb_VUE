@@ -1,11 +1,40 @@
-<script setup>
+<script setup lang="ts">
 import HeaderComponent from '@/shared/components/HeaderComponent.vue';
 import FooterComponent from '@/shared/components/FooterComponent.vue';
 import SectionFiltersComponent from '@/shared/components/SectionFiltersComponent.vue';
+import PopUp from '../components/PopUp.vue';
+import { useAuth } from '../../core/store/useAuth';
+import { GoogleLogin } from 'vue3-google-login';
+import { usePopUp } from '../composables/usePopUp';
+
+const auth = useAuth();
+const {closePopUp}=usePopUp();
+
+function closeWindowLogin(){
+  closePopUp();
+}
+
+const handleLoginSuccess = async (response: any) => {
+  const { credential } = response
+  try {
+    await auth.loginWithGoogle(credential);
+    closeWindowLogin();
+  } catch (err) {
+    console.error('Error en login con Google:', err)
+  }
+}
+
+
 </script>
 
 <template>
     <div class="home ">
+        <PopUp > 
+            <GoogleLogin
+                    v-if="!auth.user"
+                    :callback="handleLoginSuccess"
+                  />
+        </PopUp>
         <section class="home__header">
             <HeaderComponent></HeaderComponent>
         </section>

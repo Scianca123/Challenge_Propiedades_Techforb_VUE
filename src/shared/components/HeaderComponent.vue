@@ -1,10 +1,25 @@
-<script setup>
+<script setup lang="ts">
 import ButtonComponent from '../components/ButtonComponent.vue';
+import { useAuth } from '../../core/store/useAuth';
+import { usePopUp } from '../composables/usePopUp';
+
+const auth = useAuth();
+const {openPopUp}=usePopUp();
+
+function openWindowLogin(){
+  openPopUp();
+  console.log("open PopUp"+ auth.user );
+}
+function handleLoginLogoutClick() {
+  if (auth.user) {
+    auth.logout()
+  }
+  console.log("salir");
+}
 </script>
 
 <template>
     <header class="header ">
-        
         <div class="header__contain page-container">
           <img class="header__contain__img" src="../../assets/iconos/LOGOIcon.svg" alt="" loading="lazy">
           <nav class="header__contain__navbar">
@@ -12,10 +27,14 @@ import ButtonComponent from '../components/ButtonComponent.vue';
                 <li><ButtonComponent variant="terciario">Inicio</ButtonComponent></li>
                 <li><ButtonComponent variant="terciario">Nosotros</ButtonComponent></li>
                 <li><ButtonComponent variant="terciario">Propiedades</ButtonComponent></li>
-                <li><ButtonComponent variant="secondary"><p class="btn--text-login">Login</p></ButtonComponent></li>
+                <li>
+                  <ButtonComponent 
+                    variant="secondary"
+                    @clicked="auth.user ? handleLoginLogoutClick() : openWindowLogin()"
+                  ><p class="btn--text-login"> {{ auth.user ? 'Salir' : 'Login' }}</p></ButtonComponent>
+                </li>
              </ul>
           </nav>
-         
         </div>
     </header>
 </template>
@@ -54,6 +73,7 @@ import ButtonComponent from '../components/ButtonComponent.vue';
       }
     }
   }
+ 
   .btn--text-login{
     margin: 0px 15px 0px 15px;
  
