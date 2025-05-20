@@ -1,29 +1,54 @@
 <script setup lang="ts">
-    const props= defineProps<{
+    let currentPage=0;
+    const props=defineProps<{
         itemsPerPage:number,
         totalItems:number
     }>();
-    const emits= defineEmits<{
-        pageChange:number,
+     const emit =defineEmits<{
+        (e: 'pageChange', page: number): void
     }>()
 
     function getPages():number[]{
-        return Array.from({ length: Math.ceil(totalItems.value / itemsPerPage.value) }, (_, i) => i);
+        return Array.from({ length: Math.ceil(props.totalItems / props.itemsPerPage) }, (_, i) => i);
+    }
+
+    function onClick(page: number) {
+        currentPage=page;
+        emit('pageChange', page);
     }
 
 </script>
 
 <template>
 <div class="dotspager">
-    @for(page of pages; track page ) {
+    
             <div class="dotspager__dot"
-            v-for="page in pages" :key="page.id" 
-            [class.dotspager__dot--selected]="page === currentPage"
-            (click)="onClick(page)"
+            v-for="page in getPages" :key="page" 
+            
+            :class="{ 'dotspager__dot--selected': page === currentPage }"
+            @click="onClick(page)"
             >
             </div>
-        }
    </div>    
 </template>
 
-<style lang="scss"></style>
+<style lang="scss">
+    // @use '@/styles/variables' as *;
+    // .dotspager {
+    //     display: flex;
+    //     gap: 10px; 
+    
+    //     &__dot {
+    //     background-color: $color-turquoise;
+    //     width: 15px;
+    //     height: 15px;
+    //     border-radius: 50%;
+    //     cursor: pointer;
+    //     transition: background-color 0.3s ease;
+    
+    //     &--selected {
+    //         background-color: $color-default;
+    //     }
+    //     }
+    // }
+</style>

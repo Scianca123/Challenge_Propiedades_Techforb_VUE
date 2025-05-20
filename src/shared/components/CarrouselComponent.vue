@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { Property } from '../../features/properties/interfaces/property';
 import Card from './Card.vue';
+import DotsPager from './dotsPager.vue';
 
     defineProps<{
         items:Property[],
@@ -13,6 +14,7 @@ import Card from './Card.vue';
                 <Card v-for="item in items" :key="item.id" :property="item"></Card>
         </div>
         <!-- <app-dotspager [itemsPerPage]="itemsPerPage" [totalItems]="properties().length"  (pageChange)="onPageChange($event)"></app-dotspager> -->
+         <!-- <DotsPager :itemsPerPage=0 :totalItems=items.length ></DotsPager> -->
     </div>
 </template>
 <style lang="scss">
