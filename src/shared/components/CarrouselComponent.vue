@@ -2,38 +2,11 @@
 import type { Property } from '../../features/properties/interfaces/property';
 import Card from './Card.vue';
 
-    const props= defineProps<{
+    defineProps<{
         items:Property[],
     }>()
-    // const items=[{
-    //     id:1,
-    // location: "mar del plata ",
-    // numberOfBathroomsNumber: null ,
-    // numberOfBedrooms: null,
-    // numberOfDepartaments:4,
-    // price:20000,
-    // propertyType: "casa",
-    // squareMeters:225,
-    // state: "terminado",
-    // titulo:"titulo",
-    // typeOfBusiness: "comprar",
-    // urlImg:"no",
-    // },
-    // {
-    //     id:1,
-    // location: "mar del plata ",
-    // numberOfBathroomsNumber: null ,
-    // numberOfBedrooms: null,
-    // numberOfDepartaments:4,
-    // price:20000,
-    // propertyType: "casa",
-    // squareMeters:225,
-    // state: "terminado",
-    // titulo:"titulo",
-    // typeOfBusiness: "comprar",
-    // urlImg:"no",
-    // }]
 </script>
+
 <template>
     <div class="caroucel">
         <div class="caroucel__container">
@@ -43,4 +16,17 @@ import Card from './Card.vue';
     </div>
 </template>
 <style lang="scss">
+    .caroucel{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__container{
+        display: flex;
+        gap: 38px;
+        max-width: 100%;
+        overflow: hidden;
+        margin-bottom: -20px;
+        padding: 0px 25px 70px 25px;
+    }
+}
 </style>

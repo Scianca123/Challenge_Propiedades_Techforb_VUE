@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Property } from '../../features/properties/interfaces/property';
 
- const props=defineProps<{
+ defineProps<{
     property:Property
  }>() 
 </script>

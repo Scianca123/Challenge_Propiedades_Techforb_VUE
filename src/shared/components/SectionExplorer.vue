@@ -2,14 +2,12 @@
 import CarrouselComponent from './CarrouselComponent.vue';
 import { useBuildingsFilter } from '../../features/properties/composables/useBuildingsFilter';
 
+const buildingsFilters= useBuildingsFilter();
 
-const props=defineProps<{
+defineProps<{
     title:string,
-    label:string
+    label:string,
 }>();
-
-const { buildings,loading } = useBuildingsFilter();
-
 </script>
 
 <template>
@@ -20,8 +18,8 @@ const { buildings,loading } = useBuildingsFilter();
     <p class="seccion-explore__label">
         {{label}}
     </p>
-    <CarrouselComponent  :items= "buildings" ></CarrouselComponent>
-    <p v-if="loading">cargando....</p>
+    <CarrouselComponent  :items= "buildingsFilters.buildings" ></CarrouselComponent>
+    <p v-if="buildingsFilters.loading">cargando....</p>
 </section>
 
 </template>

@@ -2,32 +2,33 @@
 import { onMounted, ref, watch } from 'vue';
 import ToggleComponent from './ToggleComponent.vue';
 import { useBuildingsFilter } from '../../features/properties/composables/useBuildingsFilter';
+import type { Property } from '../../features/properties/interfaces/property';
 const typeOfBusiness = ref<'comprar' | 'alquilar'>('alquilar');
 const propertyType = ref('');
 const search = ref('');
 const numberOfBedrooms = ref('');
-const { buildings, fetchBuildings } = useBuildingsFilter();
 const priceRange = ref('');
 const [minPrice, maxPrice] = parsePriceRange(priceRange.value);
-// const minPricep=ref<number>();
-// const maxPricep=ref<number>();
+const buildingsFilters= useBuildingsFilter();
+const buildings= ref<Property[]>([]);
 
 onMounted(async() => {
-  fetchBuildings({
-    typeOfBusiness: typeOfBusiness.value || undefined,
+    await buildingsFilters.fetchBuildings({
+      typeOfBusiness: typeOfBusiness.value || undefined,
       propertyType: propertyType.value || undefined,
       search: search.value || undefined,
       numberOfBedrooms: numberOfBedrooms.value || undefined,
       minPrice,
       maxPrice,
-  }) 
+     }) 
+  buildings.value= buildingsFilters.buildings;
+  console.log(buildings);
   console.log(buildings.value);
 })
-watch(
+ watch(
     [typeOfBusiness, propertyType, search, numberOfBedrooms, priceRange],
-  () => {
-    // const [minPrice, maxPrice] = parsePriceRange(priceRange.value);
-    fetchBuildings({
+    async() => {
+    await buildingsFilters.fetchBuildings({
       typeOfBusiness: typeOfBusiness.value || undefined,
       propertyType: propertyType.value || undefined,
       search: search.value || undefined,
@@ -35,17 +36,19 @@ watch(
       minPrice,
       maxPrice,
     });
-  console.log(buildings.value);}
+//   console.log(buildings.value);
+    }
 );
-function applyFilters() {
+
+async function  applyFilters() {
   const [minPrice, maxPrice] = parsePriceRange(priceRange.value);
-  fetchBuildings({
-    typeOfBusiness: typeOfBusiness.value || undefined,
-    propertyType: propertyType.value || undefined,
-    search: search.value || undefined,
-    numberOfBedrooms: numberOfBedrooms.value || undefined,
-    minPrice,
-    maxPrice,
+   await buildingsFilters.fetchBuildings({
+        typeOfBusiness: typeOfBusiness.value || undefined,
+        propertyType: propertyType.value || undefined,
+        search: search.value || undefined,
+        numberOfBedrooms: numberOfBedrooms.value || undefined,
+        minPrice,
+        maxPrice,
   })
   
 }

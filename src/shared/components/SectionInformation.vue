@@ -7,17 +7,18 @@ import CardInformation from './CardInformation.vue';
 
 <template>
     <section class="seccion-information">
-    <div class="seccion-information__container-img">
-        <h2 class="seccion-information__container-img__title">Tu propiedad soñada, a solo un click!</h2>
-        <img src="@/assets/images/Building.png" alt="" class="seccion-information__container-img__img" />
-    </div>
-    <div class="seccion-information__container_details">
-        <CardInformation title="Seguridad y Tranquilidad" description="Tu seguridad y la de tu familia" urlImageIcon="src/assets/iconos/ticCardInformationIcon.svg"></CardInformation>
-        <CardInformation title="Seguridad y Tranquilidad" description="Tu seguridad y la de tu familia" urlImageIcon="src/assets/iconos/pigIcon.svg"></CardInformation>
-        <CardInformation title="Seguridad y Tranquilidad" description="Tu seguridad y la de tu familia" urlImageIcon="src/assets/iconos/HandshakeIcon.svg"></CardInformation>
-        <CardInformation title="Seguridad y Tranquilidad" description="Tu seguridad y la de tu familia" urlImageIcon="src/assets/iconos/HomeIcon.svg"></CardInformation>
-    </div>
-</section>
+        <img src="@/assets/images/circleSectionInformation.svg" alt="" class="seccion-information__circle">
+        <div class="seccion-information__container-img">
+            <h2 class="seccion-information__container-img__title">Tu propiedad soñada, a solo un click!</h2>
+            <img src="@/assets/images/Building.png" alt="" class="seccion-information__container-img__img" />
+        </div>
+        <div class="seccion-information__container_details">
+            <CardInformation title="Seguridad y Tranquilidad" description="Tu seguridad y la de tu familia" urlImageIcon="src/assets/iconos/ticCardInformationIcon.svg"></CardInformation>
+            <CardInformation title="Seguridad y Tranquilidad" description="Tu seguridad y la de tu familia" urlImageIcon="src/assets/iconos/pigIcon.svg"></CardInformation>
+            <CardInformation title="Seguridad y Tranquilidad" description="Tu seguridad y la de tu familia" urlImageIcon="src/assets/iconos/HandshakeIcon.svg"></CardInformation>
+            <CardInformation title="Seguridad y Tranquilidad" description="Tu seguridad y la de tu familia" urlImageIcon="src/assets/iconos/HomeIcon.svg"></CardInformation>
+        </div>
+    </section>
 </template>
 
 <style lang="scss">
@@ -25,6 +26,7 @@ import CardInformation from './CardInformation.vue';
     .seccion-information{
     display: flex;
     flex-direction: column;
+    position: relative;
     @media(min-width:992px){
         flex-direction: row;
     }
@@ -33,6 +35,9 @@ import CardInformation from './CardInformation.vue';
       #A6B2D3 0%, 
       $color-backgounts-one 100%
         );
+        &__circle{
+            position: absolute;
+        }
         &__container-img{
             height: 743px;
             border-top-right-radius: 200px;
