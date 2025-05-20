@@ -2,8 +2,10 @@
 import ButtonComponent from '../components/ButtonComponent.vue';
 import { useAuth } from '../../core/store/useAuth';
 import { usePopUp } from '../composables/usePopUp';
+import { useRouter } from 'vue-router'
 
 const auth = useAuth();
+const router = useRouter()
 const {openPopUp}=usePopUp();
 
 function openWindowLogin(){
@@ -12,7 +14,7 @@ function openWindowLogin(){
 }
 function handleLoginLogoutClick() {
   if (auth.user) {
-    auth.logout()
+    auth.logout(router);
   }
   console.log("salir");
 }

@@ -30,22 +30,28 @@ export const useAuth = defineStore('auth', {
   
         // Guardar en localStorage
         localStorage.setItem('token', this.token!)
+        localStorage.setItem('user', JSON.stringify(this.user));
         axios.defaults.headers.common['Authorization'] = `Bearer ${this.token}`
       },
   
-      logout() {
+      logout(router: any) {
         this.user = null
         this.token = null
         localStorage.removeItem('token')
+        localStorage.removeItem('user')
         delete axios.defaults.headers.common['Authorization']
+        router.push('/')
       },
   
       restoreSession() {
-        const token = localStorage.getItem('token')
+        const token = localStorage.getItem('token');
+        const user = localStorage.getItem('user');
         if (token) {
           this.token = token
           axios.defaults.headers.common['Authorization'] = `Bearer ${token}`
-          // Podés hacer una petición para traer los datos del usuario si querés
+        }
+        if (user) {
+          this.user = JSON.parse(user)
         }
       },
   

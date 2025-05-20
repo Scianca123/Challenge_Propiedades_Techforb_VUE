@@ -7,6 +7,7 @@ import { useAuth } from '../../core/store/useAuth';
 import { GoogleLogin } from 'vue3-google-login';
 import { usePopUp } from '../composables/usePopUp';
 import SectionExplorer from '../components/SectionExplorer.vue';
+import SectionInformation from '../components/SectionInformation.vue';
 
 const auth = useAuth();
 const {closePopUp}=usePopUp();
@@ -42,6 +43,8 @@ const handleLoginSuccess = async (response: any) => {
         <section class="home__content">
             <SectionFiltersComponent></SectionFiltersComponent>
             <SectionExplorer title="Explora nuestras propiedades exclusivas." label="Las propiedades que buscás, en un solo lugar"></SectionExplorer>
+            <SectionInformation></SectionInformation>
+            <SectionExplorer title="Oportunidades de inversión" label="Explora Nuestra Oferta de Complejos Residenciales"></SectionExplorer>
         </section >
         <section class="home__footer">
             <FooterComponent></FooterComponent>
