@@ -11,22 +11,15 @@ export const useAuth = defineStore('auth', {
         const userData = this.decodeGoogleToken(googleToken)
   
         const dto = {
-          email: userData.email,
           name: userData.name,
-          image: userData.picture,
-          googleId: userData.sub,
+          email: userData.email,
+          urlPhoto: userData.picture,
         }
-  
-        // const res = await axios.post(import.meta.env.VITE_API_URL+'user/register/google', dto)
+        const res = await axios.post(import.meta.env.VITE_API_URL+'/user/register/google', dto)
 
-        //prueba
-        this.user=userData
         this.token=userData.googleToken
-        console.log("login "+this.user);
-        //fin prueba
-  
-        // this.user = res.data.user
-        // this.token = res.data.token
+        this.user = res.data.user
+      
   
         // Guardar en localStorage
         localStorage.setItem('token', this.token!)

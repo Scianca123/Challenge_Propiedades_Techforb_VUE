@@ -10,13 +10,11 @@ const {openPopUp}=usePopUp();
 
 function openWindowLogin(){
   openPopUp();
-  console.log("open PopUp"+ auth.user );
 }
 function handleLoginLogoutClick() {
   if (auth.user) {
     auth.logout(router);
   }
-  console.log("salir");
 }
 </script>
 
