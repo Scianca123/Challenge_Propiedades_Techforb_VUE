@@ -36,7 +36,6 @@ onMounted(async() => {
       minPrice,
       maxPrice,
     });
-//   console.log(buildings.value);
     }
 );
 
@@ -77,7 +76,7 @@ function parsePriceRange(range: string): [number | undefined, number | undefined
                     <option value="edificio">Edificio</option>
                 </select>
                 <select v-model="numberOfBedrooms" name="" id="" class="section-filter__container__filters__selects">
-                    <option value="" disabled selected>Hambientes</option>
+                    <option value="" disabled selected>Ambientes</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>

@@ -18,10 +18,10 @@ import CardInformation from './CardInformation.vue';
             <img src="@/assets/images/Building.png" alt="" class="seccion-information__container-img__img" />
         </div>
         <div class="seccion-information__container_details">
-            <CardInformation title="Seguridad y Tranquilidad" description="Tu seguridad y la de tu familia" urlImageIcon="src/assets/iconos/ticCardInformationIcon.svg"></CardInformation>
-            <CardInformation title="Seguridad y Tranquilidad" description="Tu seguridad y la de tu familia" urlImageIcon="src/assets/iconos/pigIcon.svg"></CardInformation>
-            <CardInformation title="Seguridad y Tranquilidad" description="Tu seguridad y la de tu familia" urlImageIcon="src/assets/iconos/HandshakeIcon.svg"></CardInformation>
-            <CardInformation title="Seguridad y Tranquilidad" description="Tu seguridad y la de tu familia" urlImageIcon="src/assets/iconos/HomeIcon.svg"></CardInformation>
+            <CardInformation title="Seguridad y Tranquilidad" description="Tu seguridad y la de tu familia" urlImageIcon="@/assets/iconos/ticCardInformationIcon.svg"></CardInformation>
+            <CardInformation title="Seguridad y Tranquilidad" description="Tu seguridad y la de tu familia" urlImageIcon="@/assets/iconos/pigIcon.svg"></CardInformation>
+            <CardInformation title="Seguridad y Tranquilidad" description="Tu seguridad y la de tu familia" urlImageIcon="@/assets/iconos/HandshakeIcon.svg"></CardInformation>
+            <CardInformation title="Seguridad y Tranquilidad" description="Tu seguridad y la de tu familia" urlImageIcon="@/assets/iconos/HomeIcon.svg"></CardInformation>
         </div>
     </section>
 </template>
