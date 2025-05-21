@@ -46,12 +46,17 @@ import type { Property } from '../../features/properties/interfaces/property';
     box-shadow: $box-shadow-card;
     border-radius: 3.47px;
     &__title{
+        
         display: flex;
         justify-content: space-between;
         align-items: center;
         margin-left: 15px;
         margin-right: 15px;
         &__text{
+            margin-right: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
             font-family:$font-content;
             font-weight: 400;
             font-size: 11.1px;
@@ -59,6 +64,7 @@ import type { Property } from '../../features/properties/interfaces/property';
             vertical-align: middle;
         }
         &__price{
+            white-space: nowrap;
             font-weight: 500;
             font-size: 13.87px;
             line-height: 100%;
