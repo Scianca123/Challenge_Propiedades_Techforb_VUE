@@ -33,7 +33,6 @@
         <div class="caroucel__container">
                 <Card v-for="item in visibleProperties" :key="item.id" :property="item"></Card>
         </div>
-        <!-- <app-dotspager [itemsPerPage]="itemsPerPage" [totalItems]="properties().length"  (pageChange)="onPageChange($event)"></app-dotspager> -->
         <DotsPager  v-if="items.length > 0" :itemsPerPage=itemsPerPage :totalItems=items.length  @pageChange="onPageChange" ></DotsPager>
     </div>
 </template>
