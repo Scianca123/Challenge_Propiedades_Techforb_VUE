@@ -53,7 +53,7 @@
     @use '@/styles/variables' as *;
     .footer{
         height: auto;
-        background-image: url('@/assets/images/footerImg.jpg');
+        background-image: url('https://res.cloudinary.com/dikzg9cpq/image/upload/v1747848989/footerImg_hc4fit.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;

@@ -8,20 +8,20 @@ import CardInformation from './CardInformation.vue';
 <template>
     <section class="seccion-information">
         <div class="seccion-information__circles">
-           <img src="@/assets/images/circleSectionInformation.svg" alt="" class="seccion-information__circles__circle"> 
-           <img src="@/assets/images/circleSectionInformation.svg" alt="" class="seccion-information__circles__circle"> 
-           <img src="@/assets/images/circleSectionInformation.svg" alt="" class="seccion-information__circles__circle">
-           <img src="@/assets/images/circleSectionInformation.svg" alt="" class="seccion-information__circles__circle"> 
+           <img src="https://res.cloudinary.com/dikzg9cpq/image/upload/v1747848986/circleSectionInformation_zdyyve.svg" alt="" class="seccion-information__circles__circle"> 
+           <img src="https://res.cloudinary.com/dikzg9cpq/image/upload/v1747848986/circleSectionInformation_zdyyve.svg" alt="" class="seccion-information__circles__circle"> 
+           <img src="https://res.cloudinary.com/dikzg9cpq/image/upload/v1747848986/circleSectionInformation_zdyyve.svg" alt="" class="seccion-information__circles__circle">
+           <img src="https://res.cloudinary.com/dikzg9cpq/image/upload/v1747848986/circleSectionInformation_zdyyve.svg" alt="" class="seccion-information__circles__circle"> 
         </div>
         <div class="seccion-information__container-img">
             <h2 class="seccion-information__container-img__title">Tu propiedad soñada, a solo un click!</h2>
-            <img src="@/assets/images/Building.png" alt="" class="seccion-information__container-img__img" />
+            <img src="https://res.cloudinary.com/dikzg9cpq/image/upload/v1747848993/Building_ngyh0j.png" alt="" class="seccion-information__container-img__img" />
         </div>
         <div class="seccion-information__container_details">
-            <CardInformation title="Seguridad y Tranquilidad" description="Tu seguridad y la de tu familia" urlImageIcon="@/assets/iconos/ticCardInformationIcon.svg"></CardInformation>
-            <CardInformation title="Seguridad y Tranquilidad" description="Tu seguridad y la de tu familia" urlImageIcon="@/assets/iconos/pigIcon.svg"></CardInformation>
-            <CardInformation title="Seguridad y Tranquilidad" description="Tu seguridad y la de tu familia" urlImageIcon="@/assets/iconos/HandshakeIcon.svg"></CardInformation>
-            <CardInformation title="Seguridad y Tranquilidad" description="Tu seguridad y la de tu familia" urlImageIcon="@/assets/iconos/HomeIcon.svg"></CardInformation>
+            <CardInformation title="Seguridad y Tranquilidad" description="Tu seguridad y la de tu familia" urlImageIcon="https://res.cloudinary.com/dikzg9cpq/image/upload/v1747848472/ticCardInformationIcon_z6ppx4.svg"></CardInformation>
+            <CardInformation title="Seguridad y Tranquilidad" description="Tu seguridad y la de tu familia" urlImageIcon="https://res.cloudinary.com/dikzg9cpq/image/upload/v1747848472/pigIcon_swmnvq.svg"></CardInformation>
+            <CardInformation title="Seguridad y Tranquilidad" description="Tu seguridad y la de tu familia" urlImageIcon="https://res.cloudinary.com/dikzg9cpq/image/upload/v1747848471/HandshakeIcon_ojr4zl.svg"></CardInformation>
+            <CardInformation title="Seguridad y Tranquilidad" description="Tu seguridad y la de tu familia" urlImageIcon="https://res.cloudinary.com/dikzg9cpq/image/upload/v1747848472/HomeIcon_mrgwxn.svg"></CardInformation>
         </div>
     </section>
 </template>
