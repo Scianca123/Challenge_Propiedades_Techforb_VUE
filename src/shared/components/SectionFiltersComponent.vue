@@ -129,7 +129,7 @@ function parsePriceRange(range: string): [number | undefined, number | undefined
                     max-width: 639px;
                     font-size: 48px;
                     color: $color-backgounts-white;
-                    margin: 100px 0 30px 0;
+                    margin: 30px 0 30px 0;
                     @media(min-width:992px){
                         margin: 0 0 30px 0;
                     }
