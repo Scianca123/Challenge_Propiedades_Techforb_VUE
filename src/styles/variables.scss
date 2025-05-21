@@ -1,0 +1,120 @@
+// PRIMARY COLORS
+
+    //botones
+    $color-buttom-primary:#557EE5;
+
+        //TEXTB
+        $color-text-buttom-blue:#365196;
+        $color-text-buttom-white:#FCFCFC;
+
+    //TEXT
+    $color-Text-blue-dark:#545F71;
+    $color-Text-black:#020202;
+    $color-Text-grey:#545F71;
+    $color-label-gray:#838383;
+    $color-gray-primary:#8A8A8A;
+    $color-blue-card-info:#1A2E62;
+
+    //BACKGROUNTS
+    $color-backgounts: #EDF4FF;
+    $color-backgounts-one: #F8F9FB;
+    $color-backgounts-two: #F5F7FA;
+    $color-backgounts-white: #FFFFFF;
+    $color-turquoise:#dfe8f8;
+
+    //BORDERS
+    $color-borders:#EDF4FF;
+
+//FONT
+
+$font-titles: "Montserrat", sans-serif;
+$font-content: "Poppins", sans-serif;
+
+//Pading-content 
+$padding-page-x: 8.5rem;
+
+//TYPE
+%title-h1 {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 100%;
+    font-family: $font-titles;
+    vertical-align: middle;
+    color: $color-Text-black;
+}
+%title-h2 {
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 100%;
+    font-family: $font-titles;
+    vertical-align: middle;
+    color: $color-Text-black;
+}
+%title-h3 {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 100%;
+    font-family: $font-content;
+    vertical-align: middle;
+    color: $color-Text-black;
+}
+%title-h4 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 100%;
+    font-family: $font-content;
+    vertical-align: middle;
+    color: $color-Text-black;
+}
+%text-one {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 100%;
+    font-family: $font-content;
+    vertical-align: middle;
+    color: $color-Text-black;
+}
+%text-two{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 100%;
+    font-family: $font-content;
+    vertical-align: middle;
+    color: $color-Text-black;
+}
+%text-three{
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 100%;
+    font-family: $font-content;
+    vertical-align: middle;
+    color: $color-Text-black;
+}
+%botton-one{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 100%;
+    font-family: $font-content;
+    vertical-align: middle;
+}
+%botton-two{
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 100%;
+    font-family: $font-content;
+    vertical-align: middle;
+}
+%botton-three{
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 100%;
+    font-family: $font-content;
+    vertical-align: middle;
+}
+
+//BOXSHADOW
+$box-shadow-card:0px 4.16px 8.32px rgba(106, 100, 166, 0.1),
+                 0px 15.95px 15.95px rgba(106, 100, 166, 0.09),
+                 0px 35.37px 20.8px rgba(106, 100, 166, 0.05),
+                 0px 62.41px 24.97px rgba(106, 100, 166, 0.01),
+                 0px 97.78px 24.74px rgba(106, 100, 166, 0);
