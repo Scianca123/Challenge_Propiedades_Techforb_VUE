@@ -26,7 +26,7 @@ const router = createRouter({
   ]
 });
 
-router.beforeEach((to, from, next) => {
+router.beforeEach((to, _from, next) => {
   const { user } = useAuth();
 
   if (to.meta.requiresAuth && (user==null|| user==undefined)) {
