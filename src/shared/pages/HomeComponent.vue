@@ -8,9 +8,11 @@ import { GoogleLogin } from 'vue3-google-login';
 import { usePopUp } from '../composables/usePopUp';
 import SectionExplorer from '../components/SectionExplorer.vue';
 import SectionInformation from '../components/SectionInformation.vue';
+import { useRouter } from 'vue-router';
 
 const auth = useAuth();
 const {closePopUp}=usePopUp();
+const router= useRouter();
 
 function closeWindowLogin(){
   closePopUp();
@@ -21,6 +23,7 @@ const handleLoginSuccess = async (response: any) => {
   try {
     await auth.loginWithGoogle(credential);
     closeWindowLogin();
+    router.push("/Dashboard");
   } catch (err) {
     console.error('Error en login con Google:', err)
   }

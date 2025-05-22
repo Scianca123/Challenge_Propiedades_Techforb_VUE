@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeComponent from '../../shared/pages/HomeComponent.vue'
+import DashboardComponent from '../../shared/pages/DashboardComponent.vue'
+import { useAuth } from '../store/useAuth';
 
 
 const router = createRouter({
@@ -10,8 +12,28 @@ const router = createRouter({
       name: 'Home',
       component: HomeComponent
     },
-    // otras rutas...
+    {
+      path: '/Dashboard',
+      name: 'Dashboard',
+      component: DashboardComponent,
+      meta: { requiresAuth: true },
+      children: [
+        {
+          path: '',
+          component: DashboardComponent, // Página principal del dashboard
+        }]
+    },
   ]
+});
+
+router.beforeEach((to, from, next) => {
+  const { user } = useAuth();
+
+  if (to.meta.requiresAuth && (user==null|| user==undefined)) {
+    next({ name: 'Home' }); 
+  } else {
+    next();
+  }
 })
 
 export default router
