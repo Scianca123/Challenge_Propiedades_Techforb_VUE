@@ -21,7 +21,7 @@ function handleLoginLogoutClick() {
 <template>
     <header class="header ">
         <div class="header__contain page-container">
-          <img class="header__contain__img" src="../../assets/iconos/LOGOIcon.svg" alt="" loading="lazy">
+          <img class="header__contain__img" src="../../assets/iconos/LOGOIcon.svg" alt="" >
           <nav class="header__contain__navbar">
              <ul class="header__contain__navbar__list">
                 <li class="header__contain__navbar__list__item"><ButtonComponent variant="terciario">Inicio</ButtonComponent></li>

@@ -19,6 +19,7 @@
         </p>
         <CarrouselComponent  :items= "buildingsFilters.buildings" ></CarrouselComponent>
         <p v-if="buildingsFilters.loading">cargando....</p>
+        <p v-else-if="buildingsFilters.buildings.length === 0">sin propiedades cargadas</p>
     </section>
 </template>
 

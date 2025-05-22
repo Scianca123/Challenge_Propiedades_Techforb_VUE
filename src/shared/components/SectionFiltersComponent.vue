@@ -102,7 +102,7 @@ function parsePriceRange(range: string): [number | undefined, number | undefined
         position: relative;
         width: 100%;
         min-height: 100vh;
-        background-image: url('https://res.cloudinary.com/dikzg9cpq/image/upload/v1747848993/property1_k27cnp.jpg');
+        background-image: url('https://res.cloudinary.com/dikzg9cpq/image/upload/v1747851248/property1_k27cnp.jpg');
         background-size: center;
         background-position: center;
         background-repeat: no-repeat;
