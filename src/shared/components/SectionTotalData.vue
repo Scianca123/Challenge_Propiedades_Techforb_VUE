@@ -5,11 +5,11 @@ import CardDataComponent from './CardDataComponent.vue';
 
 <template>
    <section class="total-data">
-        <CardDataComponent :typeCard="'Total-card'" :titleData="'Total Revenue'" :valueData="'$2534'" :iconData="'@/assets/iconos/CashIcon.svg'"></CardDataComponent>
-        <CardDataComponent :typeCard="'Total-card'" :titleData="'Total Visitor'" :valueData="'2534'" :iconData="'@/assets/iconos/CashIcon.svg'"></CardDataComponent>
-        <CardDataComponent :typeCard="'Total-card'" :titleData="'Total Properties'" :valueData="'2534'" :iconData="'@/assets/iconos/CashIcon.svg'"></CardDataComponent>
-        <CardDataComponent :typeCard="'Total-card'" :titleData="'Total Properties for Sell'" :valueData="'2534'" :iconData="'@/assets/iconos/CashIcon.svg'"></CardDataComponent>
-        <CardDataComponent :typeCard="'Total-card'" :titleData="'Total Properties for Rent'" :valueData="'2534'" :iconData="'@/assets/iconos/CashIcon.svg'"></CardDataComponent>
+        <CardDataComponent :typeCard="'Total-card'" :titleData="'Total Revenue'" :valueData="'$2534'" :iconData="'https://res.cloudinary.com/dikzg9cpq/image/upload/v1748022234/CashIcon_pewj3y.svg'"></CardDataComponent>
+        <CardDataComponent :typeCard="'Total-card'" :titleData="'Total Visitor'" :valueData="'2534'" :iconData="'https://res.cloudinary.com/dikzg9cpq/image/upload/v1748022234/CashIcon_pewj3y.svg'"></CardDataComponent>
+        <CardDataComponent :typeCard="'Total-card'" :titleData="'Total Properties'" :valueData="'2534'" :iconData="'https://res.cloudinary.com/dikzg9cpq/image/upload/v1748022234/CashIcon_pewj3y.svg'"></CardDataComponent>
+        <CardDataComponent :typeCard="'Total-card'" :titleData="'Total Properties for Sell'" :valueData="'2534'" :iconData="'https://res.cloudinary.com/dikzg9cpq/image/upload/v1748022234/CashIcon_pewj3y.svg'"></CardDataComponent>
+        <CardDataComponent :typeCard="'Total-card'" :titleData="'Total Properties for Rent'" :valueData="'2534'" :iconData="'https://res.cloudinary.com/dikzg9cpq/image/upload/v1748022234/CashIcon_pewj3y.svg'"></CardDataComponent>
         <!-- <app-card-total-data [titleData]="'Total'" [valueData]="'2534'" [iconData]="'assets/iconos/CashIcon.svg'" ></app-card-total-data>
         <app-card-total-data [titleData]="'Total'" [valueData]="'2534'" [iconData]="'assets/iconos/CashIcon.svg'" ></app-card-total-data>
         <app-card-total-data [titleData]="'Total'" [valueData]="'2534'" [iconData]="'assets/iconos/CashIcon.svg'" ></app-card-total-data>

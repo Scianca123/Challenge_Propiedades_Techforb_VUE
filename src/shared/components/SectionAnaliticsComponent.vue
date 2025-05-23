@@ -1,39 +1,41 @@
 <script setup lang="ts">
-import CardDataComponent from './CardDataComponent.vue';
-import SalesDataList from '../../features/properties/components/SalesDataList.vue';
-
-const mockReport = {
-  Yearly: {
-    report: {
-      via_Website: 25,
-      via_team_member: 15,
-      via_agents: 30,
-      via_Social_media: 10,
-      via_Digital_marketing: 12,
-      via_others: 8,
-    }
-  },
-  Monthly: {
-    report: {
-      via_Website: 20,
-      via_team_member: 18,
-      via_agents: 25,
-      via_Social_media: 14,
-      via_Digital_marketing: 15,
-      via_others: 8,
-    }
-  },
-  Weekly: {
-    report: {
-      via_Website: 10,
-      via_team_member: 10,
-      via_agents: 35,
-      via_Social_media: 20,
-      via_Digital_marketing: 15,
-      via_others: 10,
-    }
-  },
-};
+    import CardDataComponent from './CardDataComponent.vue';
+    import SalesDataList from '../../features/properties/components/SalesDataList.vue';
+import RevenueAnalytics from '../../features/sales/components/RevenueAnalytics.vue';
+    
+    
+    const mockReport = {
+        Yearly: {
+            report: {
+            via_Website: 25,
+            via_team_member: 15,
+            via_agents: 30,
+            via_Social_media: 10,
+            via_Digital_marketing: 12,
+            via_others: 8,
+            }
+        },
+        Monthly: {
+            report: {
+            via_Website: 20,
+            via_team_member: 18,
+            via_agents: 25,
+            via_Social_media: 14,
+            via_Digital_marketing: 15,
+            via_others: 8,
+            }
+        },
+        Weekly: {
+            report: {
+            via_Website: 10,
+            via_team_member: 10,
+            via_agents: 35,
+            via_Social_media: 20,
+            via_Digital_marketing: 15,
+            via_others: 10,
+            }
+        },
+    };
 
 </script>
 
@@ -42,7 +44,9 @@ const mockReport = {
     <section class="seccion-analytics">
         <div class="seccion-analytics__top">
             <div class="seccion-analytics__top__left">
-                <CardDataComponent :typeCard="'flex'" :titleData="'Revenue Analytics'"></CardDataComponent>
+                <CardDataComponent :typeCard="'flex'" :titleData="'Revenue Analytics'">
+                    <RevenueAnalytics title="Revenue Analytics"></RevenueAnalytics>
+                </CardDataComponent>
             <!-- <app-card-analytics [title]="'Revenue Analytics'"> 
                     <select class="seccion-analytics__top__left__select" option>
                         <option value="Monthly">Monthly</option>

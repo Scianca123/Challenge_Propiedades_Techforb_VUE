@@ -96,7 +96,7 @@ const selectedPeriod = ref<Period>('Yearly');
                 }
                 &__barPersentage{
                     width: 100%;
-                    height: 10px;
+                    height: 6px;
                     background-color: #e0e0e0; 
                     border-radius: 5px;
                     overflow: hidden;
