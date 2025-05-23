@@ -9,8 +9,12 @@ body,html {
   height: 100%;
 }
 .page-container{
-  padding-left: $padding-page-x;
-  padding-right: $padding-page-x;
+  padding-left:4rem;
+  padding-right: 4rem;
+  @media (min-width: 992px){
+    padding-left: $padding-page-x;
+    padding-right: $padding-page-x;
+  }
 }
 h1{
   @extend %title-h1;
