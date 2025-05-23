@@ -3,6 +3,9 @@ import { onMounted, ref, watch } from 'vue';
 import ToggleComponent from './ToggleComponent.vue';
 import { useBuildingsFilter } from '../../features/properties/composables/useBuildingsFilter';
 import type { Property } from '../../features/properties/interfaces/property';
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 const typeOfBusiness = ref<'comprar' | 'alquilar'>('alquilar');
 const propertyType = ref('');
 const search = ref('');
@@ -65,25 +68,25 @@ function parsePriceRange(range: string): [number | undefined, number | undefined
         <div class="section-filter__overlay"></div>
         <div class="section-filter__container page-container">
             <div class="section-filter__container__title">
-                <h1 class="section-filter__container__title__text">Encuentra la Propiedad de tus Sueños con Nosotros</h1>
+                <h1 class="section-filter__container__title__text">{{ t('Filters.tituloPrincipal') }} </h1>
             </div>
             <div class="section-filter__container__filters">
                 <ToggleComponent  v-model:selected="typeOfBusiness"></ToggleComponent>
-                <input v-model="search" type="text"  class="section-filter__container__filters__input" placeholder="Buscar por ubicación o palabra clave...">
+                <input v-model="search" type="text"  class="section-filter__container__filters__input" :placeholder="t('Filters.placeholderBusqueda')">
                 <select v-model="propertyType" name="" id="" class="section-filter__container__filters__selects">
-                    <option value="" disabled selected>Departamento</option>
-                    <option value="departamento">Departamento</option>
-                    <option value="edificio">Edificio</option>
+                    <option value="" disabled selected>{{ t('Filters.selectTipoPropiedad') }}</option>
+                    <option value="departamento">	{{ t('Filters.departamento') }}</option>
+                    <option value="edificio">{{ t('Filters.edificio') }}</option>
                 </select>
                 <select v-model="numberOfBedrooms" name="" id="" class="section-filter__container__filters__selects">
-                    <option value="" disabled selected>Ambientes</option>
+                    <option value="" disabled selected>{{ t('Filters.selectAmbientes') }}</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
                     <option value="4">4</option>
                 </select>
                 <select v-model="priceRange" name="" id="" class="section-filter__container__filters__selects section-filter__container__filters__selects--small-Select">
-                    <option value="" disabled >Precio </option>
+                    <option value="" disabled >{{ t('Filters.selectPrecio') }} </option>
                     <option value="0-10000">0-10.000</option>
                     <option value="10000-20000">10.000-20.000</option>
                     <option value="20000-30000">20.000-30.000</option>

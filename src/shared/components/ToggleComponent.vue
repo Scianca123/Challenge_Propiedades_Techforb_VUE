@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 
 const selected = defineModel<'comprar' | 'alquilar'>('selected')
 
@@ -13,13 +16,13 @@ const seleccionar = (opcion: 'comprar' | 'alquilar') => {
             <button 
             :class="['Toggle__btn', selected === 'comprar' && 'Toggle__btn--selected']"
             @click="seleccionar('comprar')"
-            >Comprar</button>
+            >{{ t('Toggle.comprar') }}</button>
         </div>
         <div :class="['Toggle__half', selected === 'alquilar' && 'Toggle__half--selected']">
             <button class="Toggle__btn"
             :class="['Toggle__btn', selected === 'alquilar' && 'Toggle__btn--selected']"
             @click="seleccionar('alquilar')"
-            >Alquilar</button>  
+            >{{ t('Toggle.alquilar') }}</button>  
         </div>
             
     </div>

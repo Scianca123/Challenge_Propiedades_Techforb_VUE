@@ -1,0 +1,22 @@
+{
+    "Header": {
+        "inicio": "Início",
+        "nosotros": "Sobre nós",
+        "propiedades": "Propriedades",
+        "login": "Entrar",
+        "salir": "Sair"
+      },
+      "Filters": {
+        "tituloPrincipal": "Encontre a Propriedade dos Seus Sonhos Conosco",
+        "placeholderBusqueda": "Buscar por localização ou palavra-chave...",
+        "selectTipoPropiedad": "Apartamento",
+        "departamento": "Apartamento",
+        "edificio": "Prédio",
+        "selectAmbientes": "Ambientes",
+        "selectPrecio": "Preço"
+      },
+      "Toggle": {
+        "comprar": "Comprar",
+        "alquilar": "Alugar"
+      }
+}

@@ -1,0 +1,23 @@
+{
+    "Header": {
+        "inicio": "Inicio",
+        "nosotros": "Nosotros",
+        "propiedades": "Propiedades",
+        "login": "Login",
+        "salir": "Salir"
+      },
+    
+    "Filters": {
+        "tituloPrincipal": "Encuentra la Propiedad de tus Sueños con Nosotros",
+        "placeholderBusqueda": "Buscar por ubicación o palabra clave...",
+        "selectTipoPropiedad": "Departamento",
+        "departamento": "Departamento",
+        "edificio": "Edificio",
+        "selectAmbientes": "Ambientes",
+        "selectPrecio": "Precio"
+    },
+    "Toggle": {
+        "comprar": "Comprar",
+        "alquilar": "Alquilar"
+      }
+}

@@ -3,6 +3,9 @@ import ButtonComponent from '../components/ButtonComponent.vue';
 import { useAuth } from '../../core/store/useAuth';
 import { usePopUp } from '../composables/usePopUp';
 import { useRouter } from 'vue-router'
+import { useI18n } from 'vue-i18n';
+
+const { t } = useI18n();
 
 const auth = useAuth();
 const router = useRouter()
@@ -24,14 +27,14 @@ function handleLoginLogoutClick() {
           <img class="header__contain__img" src="../../assets/iconos/LOGOIcon.svg" alt="" >
           <nav class="header__contain__navbar">
              <ul class="header__contain__navbar__list">
-                <li class="header__contain__navbar__list__item"><ButtonComponent variant="terciario">Inicio</ButtonComponent></li>
-                <li class="header__contain__navbar__list__item"><ButtonComponent variant="terciario">Nosotros</ButtonComponent></li>
-                <li class="header__contain__navbar__list__item"><ButtonComponent variant="terciario">Propiedades</ButtonComponent></li>
+                <li class="header__contain__navbar__list__item"><ButtonComponent variant="terciario">{{t('Header.inicio')}}</ButtonComponent></li>
+                <li class="header__contain__navbar__list__item"><ButtonComponent variant="terciario">{{ t('Header.nosotros') }}</ButtonComponent></li>
+                <li class="header__contain__navbar__list__item"><ButtonComponent variant="terciario">{{ t('Header.propiedades') }}</ButtonComponent></li>
                 <li>
                   <ButtonComponent 
                     variant="secondary"
                     @clicked="auth.user ? handleLoginLogoutClick() : openWindowLogin()"
-                  ><p class="btn--text-login"> {{ auth.user ? 'Salir' : 'Login' }}</p></ButtonComponent>
+                  ><p class="btn--text-login"> {{ auth.user ? t('Header.salir') :  t('Header.login') }}</p></ButtonComponent>
                 </li>
              </ul>
           </nav>

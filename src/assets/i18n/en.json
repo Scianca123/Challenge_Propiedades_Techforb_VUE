@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "inicio": "Home",
+        "nosotros": "About Us",
+        "propiedades": "Properties",
+        "login": "Login",
+        "salir": "Logout"
+      },
+
+    "Filters": {
+        "tituloPrincipal": "Find the Property of Your Dreams with Us",
+        "placeholderBusqueda": "Search by location or keyword...",
+        "selectTipoPropiedad": "Apartment",
+        "departamento": "Apartment",
+        "edificio": "Building",
+        "selectAmbientes": "Bedrooms",
+        "selectPrecio": "Price"
+    },
+    "Toggle": {
+        "comprar": "Buy",
+        "alquilar": "Rent"
+      }
+
+}
