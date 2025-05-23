@@ -2,7 +2,7 @@
     const props=defineProps<{
         typeCard:'Total-card'|'flex',
         titleData:string,
-        valueData?:number|null|undefined,
+        valueData?:string|null|undefined,
         iconData?:string|null|undefined,
     }>();
 </script>
@@ -11,7 +11,7 @@
    <div class="card-total" v-if="props.typeCard==='Total-card'">
         <span for="" class="card-total__data">
             <span class="card-total__data__title">{{props.titleData}}</span>
-            <span  class="card-total__data__value">$ {{props.valueData}}</span>
+            <span  class="card-total__data__value">{{props.valueData}}</span>
         </span>
         <span for="" class="card-total__icon" >
             <img v-if="props.iconData" :src=props.iconData alt="" class="card-total__icon__img">
@@ -42,14 +42,16 @@
             flex-direction: column;
             gap: 10px;
             &__title{
-                font-size: 17px;
+                font-size: 12px;
                 font-weight: 500;
                 color: $color-gray-primary;
+                font-family: $font-content;
             }
             &__value{
                 font-size: 17px;
                 font-weight: 600;
                 color: $color-Text-black;
+                font-family: $font-content;
             }
             
         }

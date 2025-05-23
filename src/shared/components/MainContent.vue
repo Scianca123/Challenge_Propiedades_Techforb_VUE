@@ -12,7 +12,7 @@ import SectionTotalData from './SectionTotalData.vue';
         <h5 class="main-content__header__title">
         Hello, {{userName}}
         </h5>
-        <h6 class="main-content__header__title2"> welcome back</h6>
+        <h6 class="main-content__header__title2"> welcome back!</h6>
     </div>
     <div class="main-content__seccion-total-data">
          <SectionTotalData></SectionTotalData>
@@ -37,13 +37,15 @@ import SectionTotalData from './SectionTotalData.vue';
             &__title{
                 margin:0;
                 color: $color-Text-black;
-                font-size: 20px;
+                font-size: 16px;
+                font-family:$font-titles ;
             }
             
             &__title2{
                 margin:0;
                 color: $color-gray-primary;
-                font-size: 17px;
+                font-size: 13px;
+                font-family: $font-content;
             }
             &__seccion-total-data{
                 display: flex;

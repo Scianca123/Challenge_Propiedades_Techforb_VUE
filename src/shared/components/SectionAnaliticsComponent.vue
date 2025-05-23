@@ -52,7 +52,7 @@ const mockReport = {
             </div>
             <div class="seccion-analytics__top__right">
                 <CardDataComponent :typeCard="'flex'" :titleData="'Revenue Analytics'">
-                    <SalesDataList    title="Sales Report" :report="mockReport"></SalesDataList>
+                    <SalesDataList    title="Sales Data" :report="mockReport"></SalesDataList>
                 </CardDataComponent>
                 <!-- <app-card-analytics [title]="'Sales Data'"> 
                     <select class="seccion-analytics__top__left__select" option>
