@@ -1,10 +1,48 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import CardDataComponent from './CardDataComponent.vue';
+import SalesDataList from '../../features/properties/components/SalesDataList.vue';
+
+const mockReport = {
+  Yearly: {
+    report: {
+      via_Website: 25,
+      via_team_member: 15,
+      via_agents: 30,
+      via_Social_media: 10,
+      via_Digital_marketing: 12,
+      via_others: 8,
+    }
+  },
+  Monthly: {
+    report: {
+      via_Website: 20,
+      via_team_member: 18,
+      via_agents: 25,
+      via_Social_media: 14,
+      via_Digital_marketing: 15,
+      via_others: 8,
+    }
+  },
+  Weekly: {
+    report: {
+      via_Website: 10,
+      via_team_member: 10,
+      via_agents: 35,
+      via_Social_media: 20,
+      via_Digital_marketing: 15,
+      via_others: 10,
+    }
+  },
+};
+
+</script>
 
 <template>
 
     <section class="seccion-analytics">
         <div class="seccion-analytics__top">
             <div class="seccion-analytics__top__left">
+                <CardDataComponent :typeCard="'flex'" :titleData="'Revenue Analytics'"></CardDataComponent>
             <!-- <app-card-analytics [title]="'Revenue Analytics'"> 
                     <select class="seccion-analytics__top__left__select" option>
                         <option value="Monthly">Monthly</option>
@@ -13,6 +51,9 @@
             <app-chart content  style="width: 100%;">contenido</app-chart></app-card-analytics>  -->
             </div>
             <div class="seccion-analytics__top__right">
+                <CardDataComponent :typeCard="'flex'" :titleData="'Revenue Analytics'">
+                    <SalesDataList    title="Sales Report" :report="mockReport"></SalesDataList>
+                </CardDataComponent>
                 <!-- <app-card-analytics [title]="'Sales Data'"> 
                     <select class="seccion-analytics__top__left__select" option>
                         <option value="Monthly">Monthly</option>
@@ -24,12 +65,15 @@
         </div>
         <div class="seccion-analytics__bottom">
             <div class="seccion-analytics__bottom__left">
+                <CardDataComponent :typeCard="'flex'" :titleData="'Revenue Analytics'"></CardDataComponent>
                 <!-- <app-card-analytics [title]="'Area Map'"> <p option class="optionExample">Last update 5 days ago</p><p content>contenido</p></app-card-analytics> -->
             </div>
             <div class="seccion-analytics__bottom__medium">
+                <CardDataComponent :typeCard="'flex'" :titleData="'Revenue Analytics'"></CardDataComponent>
                 <!-- <app-card-analytics [title]="'Recent Transections'"> <p option>View orders</p><p content>contenido</p></app-card-analytics> -->
             </div>
             <div class="seccion-analytics__bottom__right">
+                <CardDataComponent :typeCard="'flex'" :titleData="'Revenue Analytics'"></CardDataComponent>
                 <!-- <app-card-analytics [title]="'Area Map'"> <p option>See More</p><p content>contenido</p></app-card-analytics> -->
             </div>
         </div>

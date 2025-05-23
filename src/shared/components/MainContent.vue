@@ -10,7 +10,7 @@ import SectionTotalData from './SectionTotalData.vue';
     <section class="main-content">
     <div class="main-content__header">
         <h5 class="main-content__header__title">
-        Hello,{{userName}}
+        Hello, {{userName}}
         </h5>
         <h6 class="main-content__header__title2"> welcome back</h6>
     </div>

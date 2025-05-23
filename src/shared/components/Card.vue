@@ -46,7 +46,6 @@ import type { Property } from '../../features/properties/interfaces/property';
     box-shadow: $box-shadow-card;
     border-radius: 3.47px;
     &__title{
-        
         display: flex;
         justify-content: space-between;
         align-items: center;
